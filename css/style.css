@@ -1609,10 +1609,10 @@ p { color: var(--c-muted); }
 }
 
 /* Conteúdo acima do fundo */
-.header, main, .footer, .wa-float, .skip-link { position: relative; z-index: var(--z-base); }
+.header, main, .footer { position: relative; z-index: var(--z-base); }
 .header { z-index: var(--z-head); }
-.wa-float { z-index: var(--z-wa); }
-.skip-link { z-index: var(--z-skip); }
+.wa-float { z-index: var(--z-wa); } /* mantém position: fixed da regra base */
+.skip-link { z-index: var(--z-skip); } /* mantém position: fixed da regra base */
 
 /* As seções precisam deixar o fundo aparecer */
 .hero, .section, .trust-strip { background-color: transparent; }
@@ -1741,10 +1741,10 @@ body { background-color: var(--c-black); }
   flex-shrink: 0;
 }
 .hero-chip svg { width: 15px; height: 15px; color: var(--c-gold); }
-.hero-chip--1 { top: 8%;  left: -8%;  animation-delay: 0s; }
-.hero-chip--2 { top: 32%; right: -10%; animation-delay: 1.2s; }
-.hero-chip--3 { bottom: 24%; left: -10%; animation-delay: 2.1s; }
-.hero-chip--4 { bottom: 6%; right: -6%;  animation-delay: 0.6s; }
+.hero-chip--1 { top: 6%;  left: 5%;   animation-delay: 0s; }
+.hero-chip--2 { top: 30%; right: 5%;  animation-delay: 1.2s; }
+.hero-chip--3 { bottom: 22%; left: 5%; animation-delay: 2.1s; }
+.hero-chip--4 { bottom: 6%; right: 5%; animation-delay: 0.6s; }
 @keyframes chip-float {
   0%,100% { transform: translateY(0); }
   50%     { transform: translateY(-9px); }
