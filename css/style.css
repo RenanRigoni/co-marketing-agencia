@@ -391,6 +391,61 @@ p { color: var(--c-muted); }
   white-space: nowrap;
 }
 
+/* ----------------------------------------------------------------
+   Destaque dourado em palavras-chave dos títulos (visual hooks)
+----------------------------------------------------------------- */
+.text-gold {
+  background: linear-gradient(90deg, #E8CC2A 0%, #D6B91F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px rgba(232, 204, 42, 0.18);
+}
+/* Fallback p/ engines sem background-clip:text */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .text-gold { color: var(--c-gold); background: none; text-shadow: 0 0 18px rgba(232,204,42,0.22); }
+}
+
+/* Nome da marca — tratamento premium em títulos e assinaturas visuais */
+.brand-name {
+  font-family: var(--f-head);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #E8CC2A 0%, #D6B91F 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 24px rgba(232, 204, 42, 0.18);
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .brand-name { color: var(--c-gold); background: none; }
+}
+
+/* Variação forte: sublinhado dourado que se desenha ao entrar */
+.text-gold--mark {
+  position: relative;
+}
+.text-gold--mark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.08em;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #E8CC2A, #D6B91F);
+  opacity: 0.75;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1));
+}
+.reveal.visible .text-gold--mark::after,
+h1 .text-gold--mark::after { transform: scaleX(1); }
+@media (prefers-reduced-motion: reduce) {
+  .text-gold--mark::after { transform: scaleX(1); transition: none; }
+}
+
 .section__subtitle {
   font-size: 1rem;
   color: var(--c-muted);
@@ -672,7 +727,7 @@ p { color: var(--c-muted); }
   align-items: center;
   gap: 1.5rem;
   width: max-content;
-  animation: marquee 28s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 
 .ts-item {
