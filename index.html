@@ -16,6 +16,15 @@
   <meta property="og:description" content="Agência especializada em merchandising, promotoras, degustação, ações em PDV, eventos e ativações presenciais para marcas e empresas.">
   <!-- SUBSTITUIR: URL real do site -->
   <meta property="og:url" content="https://comarketingagencia.com.br">
+  <!-- SUBSTITUIR: imagem social dedicada 1200x630 (provisório: logo) -->
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:image:alt" content="Co-marketing Agência">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Co-marketing Agência">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Co-marketing Agência | Merchandising, Promotoras e Ações em PDV">
+  <meta name="twitter:description" content="Agência especializada em merchandising, promotoras, degustação, ações em PDV, eventos e ativações presenciais para marcas e empresas.">
+  <meta name="twitter:image" content="assets/logo.png">
 
   <!-- Fonts ========================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,10 +143,6 @@
             <a href="#servicos" class="btn btn--outline btn--lg">Ver serviços</a>
           </div>
 
-          <div class="hero__stat">
-            <span class="hero__stat-num text-gold">+100</span>
-            <span class="hero__stat-label">empresas atendidas</span>
-          </div>
         </div>
 
         <!-- SUBSTITUIR: hero-pdv.jpg por foto real de PDV, promotoras ou ativação -->
@@ -164,6 +169,16 @@
             <span class="hero-chip hero-chip--4" data-float>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg>
               Relatório visual
+            </span>
+            <!-- Prova social integrada à visual -->
+            <span class="hero-chip hero-chip--proof" data-float>
+              <svg class="hero-chip__proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 11h2M13 11h2M9 7h2M13 7h2"/>
+              </svg>
+              <span class="hero-chip__proof-content">
+                <span class="hero-chip__proof-num">+100</span>
+                <span class="hero-chip__proof-label">empresas atendidas</span>
+              </span>
             </span>
           </div>
         </div>
@@ -728,7 +743,8 @@
                  alt="Ana Paula Sá, à frente da Co-marketing Agência"
                  class="about__photo"
                  loading="lazy"
-                 width="480" height="580">
+                 width="480" height="580"
+                 onerror="this.style.display='none'; this.closest('.about__photo-wrap').classList.add('photo-missing')">
             <div class="about__photo-accent" aria-hidden="true"></div>
             <span class="about__photo-label" aria-hidden="true">
               <span class="hero-chip__dot"></span> Direção estratégica
